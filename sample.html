@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        body{
+            background-color:black;
+            color: white;
+            margin :20px 30px;
+        }
+        label{
+            padding:20px 0px 50px;
+        }
+        #btn{
+            width: 400px;
+            
+        }
+        input{
+            padding: 4px;
+            width: 300px;
+        }
+        #text1-width{
+            width: 300px;
+            padding: 0px 0px 10px;
+            
+        }
+        th,tr{
+            padding:5px 80px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Library Management System</h1><br>
+    <form method="post" name="sample">
+        
+        <label>Book Name</label>
+        <input id="text1_width" type="text" name="rollno"><br><br>
+
+        <label>Issued To</label>
+        <input id="text1_width" type="text" name="name"><br><br>
+         
+        <input id="btn" type="button" name="add" value="Add Data" onclick="addStudent();"><br><br>
+
+        <table id="tbl" class="table" border="1">
+            <thead>
+                <th>ID</th>
+                <th>Book Name</th>
+                <th>Issued To</th>
+                <th>Issue Date and Time</th>
+                <th>Status</th>
+            </thead>
+            
+            <tbody>
+
+            </tbody>
+        </table>
+    </form>
+    <script type="text/javascript">
+        function addStudent(){
+            var id = document.getElementById("tbl").rows.length;
+            var rollno = document.sample.rollno.value;
+            var name = document.sample.name.value;
+
+
+            var tr = document.createElement('tr');
+
+            var td1 = tr.appendChild(document.createElement('td'));
+            var td2 = tr.appendChild(document.createElement('td'));
+            var td3 = tr.appendChild(document.createElement('td'));
+            var td4 = tr.appendChild(document.createElement('td'));
+            var td5 = tr.appendChild(document.createElement('button'));
+            
+
+            td1.innerHTML = id;
+            td2.innerHTML = rollno;
+            td3.innerHTML = name;
+            td4.innerHTML = Date();
+            td5.innerText = "Not Returned";
+           
+            
+            
+
+
+            document.getElementById("tbl").appendChild(tr);
+        }
+        
+    </script>
+</body>
+</html>
