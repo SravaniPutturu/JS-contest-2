@@ -83,7 +83,7 @@
             td4.innerHTML = new Date().toUTCString();
             td5.innerText = "Not Returned";
            
-            const book = {name:td1, issuedTo:td2,issueAt:new Date().toUTCString(), status:'not returned'}
+            const book = {name:td1.innerHTML, issuedTo:td2.innerHTML,issueAt:new Date().toUTCString(), status:'not returned'}
             books.push(book)
             
             console.log(books);
